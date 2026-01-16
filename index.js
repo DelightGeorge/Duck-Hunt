@@ -65,7 +65,7 @@ startButton.addEventListener('click', () => {
 
   // Start game loop
   setInterval(() => {
-    moveDucks()
+    moveDuck()
   }, 1000 / 60)
 })
 
@@ -159,18 +159,16 @@ function randomPosition (limit) {
 // ========================================
 // STEP 5: MOVE DUCKS EACH FRAME
 // ========================================
-
-function moveDucks () {
+function moveDuck () {
   for (let duck of ducks) {
     duck.x += duck.velocityX
     duck.y += duck.velocityY
 
     if (duck.x <= 0 || duck.x >= gameWidth - duckwidth) {
       duck.velocityX *= -1
-      //change image based on direction
-      updateDuckDirection(duck)
       duckFlap.currentTime = 0
       duckFlap.play()
+      updateDuckDirection(duck)
     }
 
     if (duck.y <= 0 || duck.y >= gameHeight - duckHeight) {
@@ -183,6 +181,7 @@ function moveDucks () {
     duck.currentDuck.style.top = `${duck.y}px`
   }
 }
+
 // ========================================
 // STEP 6: UPDATE DUCK IMAGE BASED ON VELOCITY
 // ========================================
