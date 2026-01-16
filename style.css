@@ -1,0 +1,53 @@
+body {
+  background: url("images/duckhunt-bg-4k.png") no-repeat center center/ cover
+    fixed;
+  cursor: url("images/target.png"), auto;
+  font-size: 20px;
+  font-family: gameFont;
+  color: white;
+}
+
+@font-face {
+  font-family: gameFont;
+  src: url("images/game-font.otf");
+}
+
+.highscore {
+  font-size: 20px;
+  font-family: gameFont;
+
+}
+#startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  font-size: 2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 1000;
+}
+
+
+#startButton:hover {
+  background-color: #45a049;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+#dog {
+  bottom: 0;
+  left: 50%;
+      background-repeat: no-repeat;
+}
+@media (max-width: 500.99px) {
+  #dog {
+    left: 30%;
+    background-repeat: no-repeat;
+  }
+}
